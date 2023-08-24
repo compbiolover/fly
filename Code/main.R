@@ -24,6 +24,7 @@ high_caf_df <- read_xlsx(path = "Data/lethality_counts_072223.xlsx", sheet = "15
 all_data <- read.csv("Data/all_data_reps_consolidated.csv", row.names = 1)
 all_conds_75 <- read.csv("Data/all_conds_75.csv", row.names = 1)
 all_conds_15 <- read.csv("Data/all_conds_15.csv", row.names = 1)
+
 # ----Loading processed No Caf data----
 no_caf_df <- read.csv("Data/low_caff_df.csv", sep = ",")
 no_caf_df$genotype <- gsub("\\s+", "", no_caf_df$genotype)
@@ -743,7 +744,6 @@ for (genotype_pair in genotype_combinations) {
   p <- ggsurvplot(
     fit = survfit_1,
     legend.title = "Genotype",
-    legend.labs = c(genotype_1, genotype_2),
     xlab = "Time (hours)",
     conf.int = TRUE,
     conf.int.alpha = 0.2,
@@ -764,8 +764,8 @@ for (genotype_pair in genotype_combinations) {
   p <- p + ggtitle(paste("7.5 mM: ", genotype_1, "vs", genotype_2))
   
   # Save plots
-  filename_png <- paste0("7.5_caf_genotype_comparison_", genotype_1, "_vs_", genotype_2, ".png")
-  filename_svg <- paste0("7.5_caf_genotype_comparison_", genotype_1, "_vs_", genotype_2, ".svg")
+  filename_png <- paste0("7.5_caf_genotype_comparison_", genotype_2, "_vs_", genotype_1, ".png")
+  filename_svg <- paste0("7.5_caf_genotype_comparison_", genotype_2, "_vs_", genotype_1, ".svg")
   
   ggsave(
     plot = p$plot, filename = filename_png,
@@ -809,7 +809,6 @@ for (genotype_pair in genotype_combinations) {
   p <- ggsurvplot(
     fit = survfit_1,
     legend.title = "Genotype",
-    legend.labs = c(genotype_1, genotype_2),
     xlab = "Time (hours)",
     conf.int = TRUE,
     conf.int.alpha = 0.2,
@@ -855,10 +854,10 @@ for (genotype_pair in genotype_combinations) {
 
 # Making combo plot
 combo_plot <- arrange_ggsurvplots(all_pairwise_km_plots, print = FALSE, ncol = 2, nrow = 3)
-ggsave("pairwise_genotype_comps_by_caf_level.png", path = "Outputs/Plots/", 
+ggsave("pairwise_genotype_comps_by_caf_level_corrected.png", path = "Outputs/Plots/", 
        device = "png", width = 16, height = 16, units = "in", dpi = 600, plot = combo_plot)
 
-ggsave("pairwise_genotype_comps_by_caf_level.svg", path = "Outputs/Plots/", 
+ggsave("pairwise_genotype_comps_by_caf_level_corrected.svg", path = "Outputs/Plots/", 
        device = "svg", width = 16, height = 16, units = "in", dpi = 600, plot = combo_plot)
 
 
