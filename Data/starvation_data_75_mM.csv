@@ -1,0 +1,151 @@
+﻿fly_id,genotype_combined,condition,genotype_alone,caff_amount,time,event
+1,w.s.7.1,starved,w1118,7.5,66,1
+2,w.s.7.1,starved,w1118,7.5,66,1
+3,w.s.7.1,starved,w1118,7.5,90,1
+4,w.s.7.1,starved,w1118,7.5,90,1
+5,w.s.7.1,starved,w1118,7.5,114,1
+6,w.s.7.2,starved,w1118,7.5,66,1
+7,w.s.7.2,starved,w1118,7.5,90,1
+8,w.s.7.2,starved,w1118,7.5,90,1
+9,w.s.7.2,starved,w1118,7.5,90,1
+10,w.s.7.2,starved,w1118,7.5,114,1
+11,w.s.7.3,starved,w1118,7.5,66,1
+12,w.s.7.3,starved,w1118,7.5,66,1
+13,w.s.7.3,starved,w1118,7.5,90,1
+14,w.s.7.3,starved,w1118,7.5,90,1
+15,w.s.7.3,starved,w1118,7.5,114,1
+16,w.s.7.4,starved,w1118,7.5,42,1
+17,w.s.7.4,starved,w1118,7.5,66,1
+18,w.s.7.4,starved,w1118,7.5,90,1
+19,w.s.7.4,starved,w1118,7.5,90,1
+20,w.s.7.4,starved,w1118,7.5,90,1
+21,w.s.7.5,starved,w1118,7.5,66,1
+22,w.s.7.5,starved,w1118,7.5,90,1
+23,w.s.7.5,starved,w1118,7.5,90,1
+24,w.s.7.5,starved,w1118,7.5,90,1
+25,w.s.7.5,starved,w1118,7.5,114,1
+26,w.ns.7.1,non-starved,w1118,7.5,66,1
+27,w.ns.7.1,non-starved,w1118,7.5,90,1
+28,w.ns.7.1,non-starved,w1118,7.5,114,1
+29,w.ns.7.1,non-starved,w1118,7.5,114,1
+30,w.ns.7.1,non-starved,w1118,7.5,138,1
+31,w.ns.7.2,non-starved,w1118,7.5,66,1
+32,w.ns.7.2,non-starved,w1118,7.5,90,1
+33,w.ns.7.2,non-starved,w1118,7.5,90,1
+34,w.ns.7.2,non-starved,w1118,7.5,114,1
+35,w.ns.7.2,non-starved,w1118,7.5,138,1
+36,w.ns.7.3,non-starved,w1118,7.5,66,1
+37,w.ns.7.3,non-starved,w1118,7.5,66,1
+38,w.ns.7.3,non-starved,w1118,7.5,90,1
+39,w.ns.7.3,non-starved,w1118,7.5,114,1
+40,w.ns.7.3,non-starved,w1118,7.5,114,1
+41,w.ns.7.4,non-starved,w1118,7.5,90,1
+42,w.ns.7.4,non-starved,w1118,7.5,90,1
+43,w.ns.7.4,non-starved,w1118,7.5,114,1
+44,w.ns.7.4,non-starved,w1118,7.5,114,1
+45,w.ns.7.4,non-starved,w1118,7.5,138,1
+46,w.ns.7.5,non-starved,w1118,7.5,66,1
+47,w.ns.7.5,non-starved,w1118,7.5,66,1
+48,w.ns.7.5,non-starved,w1118,7.5,66,1
+49,w.ns.7.5,non-starved,w1118,7.5,114,1
+50,w.ns.7.5,non-starved,w1118,7.5,138,1
+51,P.s.7.1,starved,pdf01,7.5,114,1
+52,P.s.7.1,starved,pdf01,7.5,114,1
+53,P.s.7.1,starved,pdf01,7.5,138,1
+54,P.s.7.1,starved,pdf01,7.5,138,1
+55,P.s.7.1,starved,pdf01,7.5,162,1
+56,P.s.7.2,starved,pdf01,7.5,18,1
+57,P.s.7.2,starved,pdf01,7.5,114,1
+58,P.s.7.2,starved,pdf01,7.5,114,1
+59,P.s.7.2,starved,pdf01,7.5,138,1
+60,P.s.7.2,starved,pdf01,7.5,162,1
+61,P.s.7.3,starved,pdf01,7.5,138,1
+62,P.s.7.3,starved,pdf01,7.5,138,1
+63,P.s.7.3,starved,pdf01,7.5,138,1
+64,P.s.7.3,starved,pdf01,7.5,162,1
+65,P.s.7.3,starved,pdf01,7.5,162,1
+66,P.s.7.4,starved,pdf01,7.5,114,1
+67,P.s.7.4,starved,pdf01,7.5,162,1
+68,P.s.7.4,starved,pdf01,7.5,162,1
+69,P.s.7.4,starved,pdf01,7.5,162,1
+70,P.s.7.4,starved,pdf01,7.5,162,1
+71,P.s.7.5,starved,pdf01,7.5,114,1
+72,P.s.7.5,starved,pdf01,7.5,114,1
+73,P.s.7.5,starved,pdf01,7.5,138,1
+74,P.s.7.5,starved,pdf01,7.5,162,1
+75,P.s.7.5,starved,pdf01,7.5,162,1
+76,P.ns.7.1,non-starved,pdf01,7.5,114,1
+77,P.ns.7.1,non-starved,pdf01,7.5,138,1
+78,P.ns.7.1,non-starved,pdf01,7.5,138,1
+79,P.ns.7.1,non-starved,pdf01,7.5,138,1
+80,P.ns.7.1,non-starved,pdf01,7.5,162,1
+81,P.ns.7.2,non-starved,pdf01,7.5,90,1
+82,P.ns.7.2,non-starved,pdf01,7.5,114,1
+83,P.ns.7.2,non-starved,pdf01,7.5,162,1
+84,P.ns.7.2,non-starved,pdf01,7.5,162,1
+85,P.ns.7.2,non-starved,pdf01,7.5,162,1
+86,P.ns.7.3,non-starved,pdf01,7.5,114,1
+87,P.ns.7.3,non-starved,pdf01,7.5,138,1
+88,P.ns.7.3,non-starved,pdf01,7.5,138,1
+89,P.ns.7.3,non-starved,pdf01,7.5,138,1
+90,P.ns.7.3,non-starved,pdf01,7.5,162,1
+91,P.ns.7.4,non-starved,pdf01,7.5,114,1
+92,P.ns.7.4,non-starved,pdf01,7.5,114,1
+93,P.ns.7.4,non-starved,pdf01,7.5,114,1
+94,P.ns.7.4,non-starved,pdf01,7.5,114,1
+95,P.ns.7.4,non-starved,pdf01,7.5,138,1
+96,P.ns.7.5,non-starved,pdf01,7.5,114,1
+97,P.ns.7.5,non-starved,pdf01,7.5,138,1
+98,P.ns.7.5,non-starved,pdf01,7.5,138,1
+99,P.ns.7.5,non-starved,pdf01,7.5,138,1
+100,P.ns.7.5,non-starved,pdf01,7.5,162,1
+101,PD.s.7.1,starved,pdf01/DF ,7.5,162,1
+102,PD.s.7.1,starved,pdf01/DF ,7.5,162,1
+103,PD.s.7.1,starved,pdf01/DF ,7.5,162,1
+104,PD.s.7.1,starved,pdf01/DF ,7.5,162,1
+105,PD.s.7.1,starved,pdf01/DF ,7.5,162,1
+106,PD.s.7.2,starved,pdf01/DF ,7.5,114,1
+107,PD.s.7.2,starved,pdf01/DF ,7.5,138,1
+108,PD.s.7.2,starved,pdf01/DF ,7.5,138,1
+109,PD.s.7.2,starved,pdf01/DF ,7.5,162,1
+110,PD.s.7.2,starved,pdf01/DF ,7.5,162,1
+111,PD.s.7.3,starved,pdf01/DF ,7.5,90,1
+112,PD.s.7.3,starved,pdf01/DF ,7.5,90,1
+113,PD.s.7.3,starved,pdf01/DF ,7.5,138,1
+114,PD.s.7.3,starved,pdf01/DF ,7.5,162,1
+115,PD.s.7.3,starved,pdf01/DF ,7.5,162,1
+116,PD.s.7.4,starved,pdf01/DF ,7.5,66,1
+117,PD.s.7.4,starved,pdf01/DF ,7.5,138,1
+118,PD.s.7.4,starved,pdf01/DF ,7.5,162,1
+119,PD.s.7.4,starved,pdf01/DF ,7.5,162,1
+120,PD.s.7.4,starved,pdf01/DF ,7.5,162,1
+121,PD.s.7.5,starved,pdf01/DF ,7.5,138,1
+122,PD.s.7.5,starved,pdf01/DF ,7.5,162,1
+123,PD.s.7.5,starved,pdf01/DF ,7.5,162,1
+124,PD.s.7.5,starved,pdf01/DF ,7.5,162,1
+125,PD.s.7.5,starved,pdf01/DF ,7.5,162,0
+126,PD.ns.7.1,non-starved,pdf01/DF ,7.5,138,1
+127,PD.ns.7.1,non-starved,pdf01/DF ,7.5,162,1
+128,PD.ns.7.1,non-starved,pdf01/DF ,7.5,162,1
+129,PD.ns.7.1,non-starved,pdf01/DF ,7.5,162,1
+130,PD.ns.7.1,non-starved,pdf01/DF ,7.5,162,0
+131,PD.ns.7.2,non-starved,pdf01/DF ,7.5,138,1
+132,PD.ns.7.2,non-starved,pdf01/DF ,7.5,138,1
+133,PD.ns.7.2,non-starved,pdf01/DF ,7.5,162,1
+134,PD.ns.7.2,non-starved,pdf01/DF ,7.5,162,1
+135,PD.ns.7.2,non-starved,pdf01/DF ,7.5,162,1
+136,PD.ns.7.3,non-starved,pdf01/DF ,7.5,90,1
+137,PD.ns.7.3,non-starved,pdf01/DF ,7.5,138,1
+138,PD.ns.7.3,non-starved,pdf01/DF ,7.5,162,1
+139,PD.ns.7.3,non-starved,pdf01/DF ,7.5,162,1
+140,PD.ns.7.3,non-starved,pdf01/DF ,7.5,162,1
+141,PD.ns.7.4,non-starved,pdf01/DF ,7.5,138,1
+142,PD.ns.7.4,non-starved,pdf01/DF ,7.5,162,1
+143,PD.ns.7.4,non-starved,pdf01/DF ,7.5,162,1
+144,PD.ns.7.4,non-starved,pdf01/DF ,7.5,162,1
+145,PD.ns.7.4,non-starved,pdf01/DF ,7.5,162,0
+146,PD.ns.7.5,non-starved,pdf01/DF ,7.5,138,1
+147,PD.ns.7.5,non-starved,pdf01/DF ,7.5,162,1
+148,PD.ns.7.5,non-starved,pdf01/DF ,7.5,162,1
+149,PD.ns.7.5,non-starved,pdf01/DF ,7.5,162,1
+150,PD.ns.7.5,non-starved,pdf01/DF ,7.5,162,0

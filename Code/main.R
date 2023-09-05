@@ -1,6 +1,6 @@
 # Name: main.R
 # Author: Andrew Willems <awillems@vols.utk.edu>
-# Purpose: Main housing of all analysis for lethality_counts_072223.xlsx analysis
+# Purpose: Main housing of all analysis for lethality_counts_072223.xlsx and Caffeine Lethality Test - Starvation.xlsx
 
 # ----Loading packages----
 pacman::p_load(
@@ -859,5 +859,105 @@ ggsave("pairwise_genotype_comps_by_caf_level_corrected.png", path = "Outputs/Plo
 
 ggsave("pairwise_genotype_comps_by_caf_level_corrected.svg", path = "Outputs/Plots/", 
        device = "svg", width = 16, height = 16, units = "in", dpi = 600, plot = combo_plot)
+
+# ---- Starvation Analysis ----
+# ----Loading processed starvation data----
+starve_df_0 <- read.csv("Data/starvation_data_0_mM.csv")
+starve_df_75 <- read.csv("Data/starvation_data_75_mM.csv")
+
+# ----7.5 mM Genotype within same condition----
+starved_75_df <- starve_df_75 %>%
+  filter(condition == "starved")
+
+colnames(starved_75_df)[4] <- "genotype"
+
+caf_75_genotype_mod <- survfit(Surv(time, event) ~ genotype, data = starved_75_df)
+caf_75_genotype_lrt <- survdiff(Surv(time, event) ~ genotype, data = starved_75_df)
+caf_75_genotype_pairwise <- pairwise_survdiff(Surv(time, event) ~ genotype, starved_75_df)
+
+# ----Plotting KM curves for 7.5 Caf all genotype Data----
+p75 <- ggsurvplot(
+  fit = caf_75_genotype_mod,
+  legend.title = "Genotype",
+  xlab = "Time (hours)",
+  conf.int = TRUE,
+  conf.int.alpha = 0.2,
+  font.main = c(18, "bold"),
+  font.x = c(16, "bold"),
+  font.y = c(16, "bold"),
+  font.tickslab = c(14, "plain"),
+  legend = "bottom",
+  pval = FALSE,
+  pval.method = FALSE,
+  ggtheme = theme(
+    plot.title = element_text(hjust = 0.5),
+    panel.background = element_blank(),
+    legend.key = element_blank()
+  )
+)
+
+p75 <- p75 + ggtitle("7.5 mM\nStarved")
+p75
+
+# ----Saving 7.5 mM Caf Starved All Genotype Plot----
+ggsave(
+  plot = p75$plot, filename = "7.5_caf_all_genotype_starved_km.png",
+  device = "png", path = "Outputs/Plots/",
+  width = 8, height = 8, units = "in", dpi = 600
+)
+
+ggsave(
+  plot = p75$plot, filename = "7.5_caf_all_genotype_starved_km.svg",
+  device = "svg", path = "Outputs/Plots/",
+  width = 8, height = 8, units = "in", dpi = 600
+)
+
+
+
+# ----7.5 mM w1118 conditions compared----
+w1118_conds <- 
+
+colnames(starved_75_df)[4] <- "genotype"
+
+caf_75_genotype_mod <- survfit(Surv(time, event) ~ genotype, data = starved_75_df)
+caf_75_genotype_lrt <- survdiff(Surv(time, event) ~ genotype, data = starved_75_df)
+caf_75_genotype_pairwise <- pairwise_survdiff(Surv(time, event) ~ genotype, starved_75_df)
+
+# ----Plotting KM curves for 7.5 Caf all genotype Data----
+p75 <- ggsurvplot(
+  fit = caf_75_genotype_mod,
+  legend.title = "Genotype",
+  xlab = "Time (hours)",
+  conf.int = TRUE,
+  conf.int.alpha = 0.2,
+  font.main = c(18, "bold"),
+  font.x = c(16, "bold"),
+  font.y = c(16, "bold"),
+  font.tickslab = c(14, "plain"),
+  legend = "bottom",
+  pval = FALSE,
+  pval.method = FALSE,
+  ggtheme = theme(
+    plot.title = element_text(hjust = 0.5),
+    panel.background = element_blank(),
+    legend.key = element_blank()
+  )
+)
+
+p75 <- p75 + ggtitle("7.5 mM\nStarved")
+p75
+
+# ----Saving 7.5 mM Caf Starved All Genotype Plot----
+ggsave(
+  plot = p75$plot, filename = "7.5_caf_all_genotype_starved_km.png",
+  device = "png", path = "Outputs/Plots/",
+  width = 8, height = 8, units = "in", dpi = 600
+)
+
+ggsave(
+  plot = p75$plot, filename = "7.5_caf_all_genotype_starved_km.svg",
+  device = "svg", path = "Outputs/Plots/",
+  width = 8, height = 8, units = "in", dpi = 600
+)
 
 

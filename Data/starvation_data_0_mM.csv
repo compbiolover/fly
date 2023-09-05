@@ -1,0 +1,91 @@
+﻿fly_id,genotype_combined,condition,genotype_alone,caff_amount,time,event
+1,w.s.0.1,starved,w1118,0,138,0
+2,w.s.0.1,starved,w1118,0,138,0
+3,w.s.0.1,starved,w1118,0,138,0
+4,w.s.0.1,starved,w1118,0,138,0
+5,w.s.0.1,starved,w1118,0,138,0
+6,w.s.0.2,starved,w1118,0,138,0
+7,w.s.0.2,starved,w1118,0,138,0
+8,w.s.0.2,starved,w1118,0,138,0
+9,w.s.0.2,starved,w1118,0,138,0
+10,w.s.0.2,starved,w1118,0,138,0
+11,w.s.0.3,starved,w1118,0,138,0
+12,w.s.0.3,starved,w1118,0,138,0
+13,w.s.0.3,starved,w1118,0,138,0
+14,w.s.0.3,starved,w1118,0,138,0
+15,w.s.0.3,starved,w1118,0,138,0
+16,w.ns.0.1,non-starved,w1118,0,138,0
+17,w.ns.0.1,non-starved,w1118,0,138,0
+18,w.ns.0.1,non-starved,w1118,0,138,0
+19,w.ns.0.1,non-starved,w1118,0,138,0
+20,w.ns.0.1,non-starved,w1118,0,138,0
+21,w.ns.0.2,non-starved,w1118,0,138,0
+22,w.ns.0.2,non-starved,w1118,0,138,0
+23,w.ns.0.2,non-starved,w1118,0,138,0
+24,w.ns.0.2,non-starved,w1118,0,138,0
+25,w.ns.0.2,non-starved,w1118,0,138,0
+26,w.ns.0.3,non-starved,w1118,0,138,0
+27,w.ns.0.3,non-starved,w1118,0,138,0
+28,w.ns.0.3,non-starved,w1118,0,138,0
+29,w.ns.0.3,non-starved,w1118,0,138,0
+30,w.ns.0.3,non-starved,w1118,0,138,0
+31,P.s.0.1,starved,pdf01,0,138,0
+32,P.s.0.1,starved,pdf01,0,138,0
+33,P.s.0.1,starved,pdf01,0,138,0
+34,P.s.0.1,starved,pdf01,0,138,0
+35,P.s.0.1,starved,pdf01,0,138,0
+36,P.s.0.2,starved,pdf01,0,138,0
+37,P.s.0.2,starved,pdf01,0,138,0
+38,P.s.0.2,starved,pdf01,0,138,0
+39,P.s.0.2,starved,pdf01,0,138,0
+40,P.s.0.2,starved,pdf01,0,138,0
+41,P.s.0.3,starved,pdf01,0,138,0
+42,P.s.0.3,starved,pdf01,0,138,0
+43,P.s.0.3,starved,pdf01,0,138,0
+44,P.s.0.3,starved,pdf01,0,138,0
+45,P.s.0.3,starved,pdf01,0,138,0
+46,P.ns.0.1,non-starved,pdf01,0,138,0
+47,P.ns.0.1,non-starved,pdf01,0,138,0
+48,P.ns.0.1,non-starved,pdf01,0,138,0
+49,P.ns.0.1,non-starved,pdf01,0,138,0
+50,P.ns.0.1,non-starved,pdf01,0,138,0
+51,P.ns.0.2,non-starved,pdf01,0,138,0
+52,P.ns.0.2,non-starved,pdf01,0,138,0
+53,P.ns.0.2,non-starved,pdf01,0,138,0
+54,P.ns.0.2,non-starved,pdf01,0,138,0
+55,P.ns.0.2,non-starved,pdf01,0,138,0
+56,P.ns.0.3,non-starved,pdf01,0,138,0
+57,P.ns.0.3,non-starved,pdf01,0,138,0
+58,P.ns.0.3,non-starved,pdf01,0,138,0
+59,P.ns.0.3,non-starved,pdf01,0,138,0
+60,P.ns.0.3,non-starved,pdf01,0,138,0
+61,PD.s.0.1,starved,pdf01/DF ,0,138,0
+62,PD.s.0.1,starved,pdf01/DF ,0,138,0
+63,PD.s.0.1,starved,pdf01/DF ,0,138,0
+64,PD.s.0.1,starved,pdf01/DF ,0,138,0
+65,PD.s.0.1,starved,pdf01/DF ,0,138,0
+66,PD.s.0.2,starved,pdf01/DF ,0,138,0
+67,PD.s.0.2,starved,pdf01/DF ,0,138,0
+68,PD.s.0.2,starved,pdf01/DF ,0,138,0
+69,PD.s.0.2,starved,pdf01/DF ,0,138,0
+70,PD.s.0.2,starved,pdf01/DF ,0,138,0
+71,PD.s.0.3,starved,pdf01/DF ,0,138,0
+72,PD.s.0.3,starved,pdf01/DF ,0,138,0
+73,PD.s.0.3,starved,pdf01/DF ,0,138,0
+74,PD.s.0.3,starved,pdf01/DF ,0,138,0
+75,PD.s.0.3,starved,pdf01/DF ,0,138,0
+76,PD.ns.0.1,non-starved,pdf01/DF ,0,138,0
+77,PD.ns.0.1,non-starved,pdf01/DF ,0,138,0
+78,PD.ns.0.1,non-starved,pdf01/DF ,0,138,0
+79,PD.ns.0.1,non-starved,pdf01/DF ,0,138,0
+80,PD.ns.0.1,non-starved,pdf01/DF ,0,138,0
+81,PD.ns.0.2,non-starved,pdf01/DF ,0,138,0
+82,PD.ns.0.2,non-starved,pdf01/DF ,0,138,0
+83,PD.ns.0.2,non-starved,pdf01/DF ,0,138,0
+84,PD.ns.0.2,non-starved,pdf01/DF ,0,138,0
+85,PD.ns.0.2,non-starved,pdf01/DF ,0,138,0
+86,PD.ns.0.3,non-starved,pdf01/DF ,0,138,0
+87,PD.ns.0.3,non-starved,pdf01/DF ,0,138,0
+88,PD.ns.0.3,non-starved,pdf01/DF ,0,138,0
+89,PD.ns.0.3,non-starved,pdf01/DF ,0,138,0
+90,PD.ns.0.3,non-starved,pdf01/DF ,0,138,0
