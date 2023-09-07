@@ -865,7 +865,7 @@ ggsave("pairwise_genotype_comps_by_caf_level_corrected.svg", path = "Outputs/Plo
 starve_df_0 <- read.csv("Data/starvation_data_0_mM.csv")
 starve_df_75 <- read.csv("Data/starvation_data_75_mM.csv")
 
-# ----7.5 mM Genotype within same condition----
+# ----7.5 mM Genotype within same condition (starved)----
 starved_75_df <- starve_df_75 %>%
   filter(condition == "starved")
 
@@ -914,16 +914,100 @@ ggsave(
 
 
 
-# ----7.5 mM w1118 conditions compared----
-w1118_conds <- 
 
-colnames(starved_75_df)[4] <- "genotype"
+# ----Making heatmap of 7.5 mM Caf Starved All Genotype data----
+# Saving heatmap of pairwise p-values in PNG format
+caf_75_genotype_pairwise$p.value <- signif(caf_75_genotype_pairwise$p.value, digits = 2)
 
-caf_75_genotype_mod <- survfit(Surv(time, event) ~ genotype, data = starved_75_df)
-caf_75_genotype_lrt <- survdiff(Surv(time, event) ~ genotype, data = starved_75_df)
-caf_75_genotype_pairwise <- pairwise_survdiff(Surv(time, event) ~ genotype, starved_75_df)
+png(filename = "Outputs/Plots/pairwise_heatmap_7.5_by_genotype_starved.png", width = 8, height = 8, units = "in", res = 1080)
+par(cex.main=4)
+heatmap.2(caf_75_genotype_pairwise$p.value, dendrogram = "none", Rowv = FALSE, trace = "none",
+          cellnote = caf_75_genotype_pairwise$p.value, notecol = "black", notecex = 3, cexCol = 4,
+          cexRow = 4, key = FALSE, margins = c(16,16))
 
-# ----Plotting KM curves for 7.5 Caf all genotype Data----
+dev.off()
+
+# Saving heatmap of pairwise p-values in SVG format
+svg(filename = "Outputs/Plots/pairwise_heatmap_7.5_by_genotype_starved.svg", width = 8, height = 8)
+par(cex.main=4)
+heatmap.2(caf_75_genotype_pairwise$p.value, dendrogram = "none", Rowv = FALSE, trace = "none",
+          cellnote = caf_75_genotype_pairwise$p.value, notecol = "black", notecex = 3, cexCol = 4,
+          cexRow = 4, key = FALSE, margins = c(16,16))
+
+dev.off()
+
+# ----7.5 mM individual genotypes across conditions compared----
+starve_df_75 <- read.csv("Data/starvation_data_75_mM.csv")
+colnames(starve_df_75)[4] <- "genotype"
+genotypes <- unique(starve_df_75$genotype)
+all_plots <- list()
+counter <- 1
+plot_tags <- c("A", "B", "C")
+
+for (g in genotypes){
+  starve_75_sub <- starve_df_75 %>% filter(genotype == g)
+  caf_75_genotype_mod <- survfit(Surv(time, event) ~ condition, data = starve_75_sub)
+  caf_75_genotype_lrt <- survdiff(Surv(time, event) ~ condition, data = starve_75_sub)
+  caf_75_genotype_pairwise <- pairwise_survdiff(Surv(time, event) ~ condition, data = starve_75_sub)
+  
+  # ----Plotting KM curves for 7.5 Caf individual genotypes across conditions----
+  p75 <- ggsurvplot(
+    fit = caf_75_genotype_mod,
+    legend.title = "Condition",
+    xlab = "Time (hours)",
+    conf.int = TRUE,
+    conf.int.alpha = 0.2,
+    font.main = c(18, "bold"),
+    font.x = c(16, "bold"),
+    font.y = c(16, "bold"),
+    font.tickslab = c(14, "plain"),
+    legend = "bottom",
+    pval = TRUE,
+    pval.method = FALSE,
+    ggtheme = theme(
+      plot.title = element_text(hjust = 0.5),
+      panel.background = element_blank(),
+      legend.key = element_blank()
+    )
+  )
+  
+  p75 <- p75 + ggtitle(paste0("7.5 mM\n",g))
+  
+  # ----Saving 7.5 mM Caf individual genotypes across conditions Plot----
+  if (g == "pdf01/DF "){
+    g <- gsub("/", "_", g)
+  }
+  ggsave(
+    plot = p75$plot, filename = paste0("7.5_caf_",g,"_across_conditions_km.png"),
+    device = "png", path = "Outputs/Plots/",
+    width = 8, height = 8, units = "in", dpi = 600
+  )
+  
+  ggsave(
+    plot = p75$plot, filename = paste0("7.5_caf_",g,"_across_conditions_km.svg"),
+    device = "svg", path = "Outputs/Plots/",
+    width = 8, height = 8, units = "in", dpi = 600
+  )
+  all_plots[[paste0(g)]] <- p75
+}
+
+# Now making a combo plot
+combo_plot <- arrange_ggsurvplots(x = all_plots, ncol = 3, nrow = 1, print = FALSE)
+ggsave(combo_plot, filename = "genotypes_across_conditions_combo_plot.png", path = "Outputs/Plots/", units = "in", width = 16, height = 9, device = "png", dpi = 600, bg = "white")
+ggsave(combo_plot, filename = "genotypes_across_conditions_combo_plot.svg", path = "Outputs/Plots/", units = "in", width = 16, height = 9, device = "svg", dpi = 600, bg = "white")
+
+# ----7.5 mM Genotype within same condition (non-starved)----
+non_starve_75_df <- read.csv("Data/starvation_data_75_mM.csv")
+non_starve_75_df <- non_starve_75_df %>%
+  filter(condition == "non-starved")
+
+colnames(non_starve_75_df)[4] <- "genotype"
+
+caf_75_genotype_mod <- survfit(Surv(time, event) ~ genotype, data = non_starve_75_df)
+caf_75_genotype_lrt <- survdiff(Surv(time, event) ~ genotype, data = non_starve_75_df)
+caf_75_genotype_pairwise <- pairwise_survdiff(Surv(time, event) ~ genotype, non_starve_75_df)
+
+# ----Plotting KM curves for 7.5 Caf all genotype non-starved----
 p75 <- ggsurvplot(
   fit = caf_75_genotype_mod,
   legend.title = "Genotype",
@@ -944,20 +1028,41 @@ p75 <- ggsurvplot(
   )
 )
 
-p75 <- p75 + ggtitle("7.5 mM\nStarved")
+p75 <- p75 + ggtitle("7.5 mM\nNon-Starved")
 p75
 
-# ----Saving 7.5 mM Caf Starved All Genotype Plot----
+# ----Saving 7.5 mM Caf Non-Starved All Genotype Plot----
 ggsave(
-  plot = p75$plot, filename = "7.5_caf_all_genotype_starved_km.png",
+  plot = p75$plot, filename = "7.5_caf_all_genotype_non_starved_km.png",
   device = "png", path = "Outputs/Plots/",
   width = 8, height = 8, units = "in", dpi = 600
 )
 
 ggsave(
-  plot = p75$plot, filename = "7.5_caf_all_genotype_starved_km.svg",
+  plot = p75$plot, filename = "7.5_caf_all_genotype_non_starved_km.svg",
   device = "svg", path = "Outputs/Plots/",
   width = 8, height = 8, units = "in", dpi = 600
 )
+
+# ----Making heatmap of 7.5 mM Caf Non-Starved All Genotype data----
+# Saving heatmap of pairwise p-values in PNG format
+caf_75_genotype_pairwise$p.value <- signif(caf_75_genotype_pairwise$p.value, digits = 2)
+
+png(filename = "Outputs/Plots/pairwise_heatmap_7.5_by_genotype_non_starved.png", width = 8, height = 8, units = "in", res = 1080)
+par(cex.main=4)
+heatmap.2(caf_75_genotype_pairwise$p.value, dendrogram = "none", Rowv = FALSE, trace = "none",
+          cellnote = caf_75_genotype_pairwise$p.value, notecol = "black", notecex = 3, cexCol = 4,
+          cexRow = 4, key = FALSE, margins = c(16,16))
+
+dev.off()
+
+# Saving heatmap of pairwise p-values in SVG format
+svg(filename = "Outputs/Plots/pairwise_heatmap_7.5_by_genotype_non_starved.svg", width = 8, height = 8)
+par(cex.main=4)
+heatmap.2(caf_75_genotype_pairwise$p.value, dendrogram = "none", Rowv = FALSE, trace = "none",
+          cellnote = caf_75_genotype_pairwise$p.value, notecol = "black", notecex = 3, cexCol = 4,
+          cexRow = 4, key = FALSE, margins = c(16,16))
+
+dev.off()
 
 
